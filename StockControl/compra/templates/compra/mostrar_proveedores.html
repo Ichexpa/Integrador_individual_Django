@@ -1,0 +1,29 @@
+{% extends "compra/base.html" %}
+
+{% block titulo %}Listado Proveedores{% endblock %}
+
+{% block titulo_header %}Listado de Proveedores{% endblock %}
+
+{%block redireccion %}
+<a href="{% url 'compra:crear_proveedor'%}" class="btn btn-success mt-3">Cargar nuevo Proveedor</a>
+{% endblock %}
+
+
+{% block encabezado_tabla %}
+<tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>DNI</th>
+</tr>
+{% endblock %}
+
+{% block cuerpo_tabla %}
+
+    {% for proveedor in proveedores %}
+    <tr>
+        <td>{{proveedor.nombre}}</td>
+        <td>{{proveedor.apellido}}</td>
+        <td>{{proveedor.dni}}</td>
+    </tr>
+    {% endfor %}
+{% endblock %}
