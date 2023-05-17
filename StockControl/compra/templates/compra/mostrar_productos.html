@@ -1,11 +1,11 @@
-{% extends "compra/base.html" %}
+{% extends "compra/base_mostrar.html" %}
 
 {% block titulo %}Listado Productos{% endblock %}
 
 {% block titulo_header %}Listado de Productos{% endblock %}
 
 {%block redireccion %}
-<a href="{% url 'compra:crear_producto' %}" class="btn btn-success mt-3">Cargar nuevo Producto</a>
+    <a href="{% url 'compra:crear_producto' %}" class="btn btn-success mt-3">Cargar nuevo Producto</a>
 {% endblock %}
 
 {% block encabezado_tabla %}
@@ -19,11 +19,11 @@
 
 {% block cuerpo_tabla %}
     {% for producto in productos %}
-    <tr>
-        <td>{{producto.nombre}}</td>
-        <td>{{producto.precio}}</td>
-        <td>{{producto.stock_actual}}</td>
-        <td>{{producto.proveedor.nombre}} {{producto.proveedor.apellido}}</td>
-    </tr>
+        <tr>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.stock_actual}}</td>
+            <td>{{producto.proveedor.nombre}} {{producto.proveedor.apellido}}</td>
+        </tr>
     {% endfor %}
 {% endblock %}
