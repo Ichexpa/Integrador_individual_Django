@@ -2,7 +2,7 @@ from django import forms
 from .models import Proveedor,Producto;
 
 class ProveedoresForm(forms.ModelForm):
-    """Crea un form del modelo Proveedores."""
+    """Crea un formulario a partir del modelo Proveedor."""
     class Meta:
         model = Proveedor
         fields = ["nombre","apellido","dni"]
@@ -12,7 +12,7 @@ class ProveedoresForm(forms.ModelForm):
             "dni": forms.NumberInput(attrs={"class": "form-control"})
         }
 class ProductoForm(forms.ModelForm):
-    """Crea un form del modelo Producto."""
+    """Crea un formulario a partir del modelo Producto."""
     class Meta:
         model = Producto
         fields = ["nombre","precio","stock_actual","proveedor"]
